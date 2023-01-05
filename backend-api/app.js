@@ -3,6 +3,7 @@ const path = require('path');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const db = require('./db');
 
 const http = require('http');
 
@@ -24,12 +25,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(__dirname+"/frontend-client/build"))
 app.use(cors({
-  origins: ['http://localhost:3000/', 'https://gameflix-frontend-react.herokuapp.com/']
+  origins: ['http://localhost:3000/']
 }));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/login', loginRouter);
+app.use('/api/users', usersRouter);
+app.use('/api/login', loginRouter);
 app.use('/api/search', searchRouter);
 
 server.listen(port);

@@ -23,7 +23,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && echo '/*  https://gameflix-backend.onrender.com/:splat' > build/_redirects",
+    "build": "react-scripts build && echo '/*  https://gameflix-backend.onrender.com/:splat 200' > build/_redirects",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
